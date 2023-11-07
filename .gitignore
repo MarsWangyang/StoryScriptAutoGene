@@ -21,6 +21,7 @@ sdist/
 var/
 wheels/
 <<<<<<< HEAD
+<<<<<<< HEAD
 pip-wheel-metadata/
 share/python-wheels/
 *.egg-info/
@@ -156,8 +157,7 @@ parts/
 sdist/
 var/
 wheels/
-=======
->>>>>>> a84aa929ad16b475064e362a40f4a192770891f6
+
 share/python-wheels/
 *.egg-info/
 .installed.cfg
