@@ -1,0 +1,4 @@
+###
+@url="http://localhost:7071/api/youtube_script_http_trigger"
+
+GET @url
