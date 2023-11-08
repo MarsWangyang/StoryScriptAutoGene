@@ -3,6 +3,7 @@ class GenePicBody():
     def __init__(self) -> None:
         self.__prompt: str = ""
         self.__size: str = ""
+        self.__num: int = 1
         
     def get_prompt(self):
         return self.__prompt
@@ -15,6 +16,15 @@ class GenePicBody():
     
     def set_size(self, size: str):
         self.__size = size
+
+    def get_num(self):
+        return self.__num
+        
+    def set_num(self, num: int):
+        if num < 4:
+            self.__num = num
+        else:
+            self.__num = 3
         
 class GeneScriptBody():
     def __init__(self) -> None:
