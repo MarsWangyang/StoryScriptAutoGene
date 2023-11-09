@@ -1,4 +1,6 @@
 azure-functions
-openai
+openai==0.28.1
 azure-storage-blob 
 azure-identity
+azure-cognitiveservices-speech
+scipy
