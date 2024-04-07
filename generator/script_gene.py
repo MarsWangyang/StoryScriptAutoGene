@@ -14,7 +14,6 @@ MSG_FILE_NAME = os.getenv("MSG_FILE_NAME")
 SG_ACC_NAME = os.getenv("SG_ACC_NAME")
 ENGINE_NAME = os.getenv("ENGINE_NAME")
 cache_path = tempfile.gettempdir()
-# cache_path = "/Users/mars/Desktop/Youtube_story_generator/templates"
 cache_file_name = "cache_msg.json"
 past_msg_num = int(os.getenv("PAST_MSG_NUM"))
 prompt_msg_num = int(os.getenv("PROMPT_MSG_NUM"))
