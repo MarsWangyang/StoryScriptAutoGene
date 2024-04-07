@@ -22,12 +22,9 @@ def youtube_post_script(req: func.HttpRequest) -> func.HttpResponse:
         return func.HttpResponse(status_code=400)
         
     try:
-        script_response = script_gene.generate(msg)        
+        script_response = script_gene.generate(msg)
         logging.info("[Info] Create new script successfully")
-        print(script_response)
-        format_res = script_response.replace("\n", " ")
-        print("="*30)
-        print(format_res)
+        format_res = script_response.replace("\\n", " ").replace("\n", " ")
         res = {
             "status": 200,
             "content": json.loads(format_res)

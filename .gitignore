@@ -7,6 +7,7 @@ __pycache__/
 *.so
 .DS_Store
 # Distribution / packaging
+
 .Python
 build/
 develop-eggs/
@@ -105,6 +106,7 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+.vscode
 
 # Spyder project settings
 .spyderproject
