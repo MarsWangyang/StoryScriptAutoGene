@@ -26,7 +26,6 @@ def upload(sampling_rate, audio_data, file_name):
         my_content_settings = ContentSettings(content_type='audio/x-wav')
         blob_service_client = BlobServiceClient(account_url, credential=credential)
         blob_client = blob_service_client.get_blob_client(container="voice", blob=f"{file_name}.wav")
-        blob_client_materials_folder = blob_service_client.get_blob_client(container="materials", blob=f"{file_name}.wav")
         logging.info(f"[Info] Connect to blob storage {SG_ACC_NAME} successfully") 
         
         bytes_wav = bytes()
@@ -34,8 +33,7 @@ def upload(sampling_rate, audio_data, file_name):
         wavfile.write(byte_io, sampling_rate, audio_data)
         output_wav = byte_io.read()
         
-        blob_client.upload_blob(output_wav, content_settings=my_content_settings)
-        blob_client_materials_folder.upload_blob(output_wav, content_settings=my_content_settings)
+        blob_client.upload_blob(output_wav, content_settings=my_content_settings, overwrite=True)
         
         return True
     except RuntimeError:
@@ -61,7 +59,7 @@ def generate(text, file_name):
     
     
     cache_audio_path = tempfile.gettempdir()
-    print(cache_audio_path)
+
     cache_audio_filename = "tmp_audio.wav"
     cache_audio_file_path = os.path.join(cache_audio_path, cache_audio_filename)
     # store in local
